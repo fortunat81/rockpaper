@@ -2,11 +2,6 @@ console.log("hello world");
 
 let choices = ["rock", "paper", "scissors"];
 
-let humanScore = 0;
-let computerScore = 0;
-
-let round = 0;
-
 function getComputerChoice(){
     return choices[Math.floor(Math.random() * 3)];
 }
@@ -20,25 +15,92 @@ function getHumanChoice(){
     return choice;
 }
 
-function playRound(computerChoice, humanChoice){
-    let tieText = `${humanChoice} is the same as ${computerChoice} it's a tie`;
-    let winText = `${humanChoice} beats ${computerChoice} you win`;
-    let loseText = `${computerChoice} beats ${humanChoice} you lose`;
-    
-    if(computerChoice == humanChoice){
-        console.log(tieText);
-    }else if(humanChoice == choices[0]){
-        switch(computerChoice){
-            case choices[1]:
-                console.log(loseText);
-                computerScore++;
-                break;
-            case choices[2]:
-                console.log(winText);
-                humanScore++;
-                break;    
-        }
-    } 
+function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
+    let round = 0;
+
+    function playRound(computerChoice, humanChoice){
+        let tieText = `${humanChoice} is the same as ${computerChoice} it's a tie`;
+        let winText = `${humanChoice} beats ${computerChoice} you win`;
+        let loseText = `${computerChoice} beats ${humanChoice} you lose`;
+        
+        if(computerChoice == humanChoice){
+            console.log(tieText);
+        }else if(humanChoice == choices[0]){
+            switch(computerChoice){
+                case choices[1]:
+                    console.log(loseText);
+                    computerScore++;
+                    break;
+                case choices[2]:
+                    console.log(winText);
+                    humanScore++;
+                    break;    
+            }
+        }else if(humanChoice == choices[1]){
+            switch(computerChoice){
+                case choices[0]:
+                    console.log(winText);
+                    humanScore++;
+                    break;
+                case choices[2]:
+                    console.log(loseText);
+                    computerScore++;
+                    break;    
+            }
+        }else if(humanChoice == choices[1]){
+            switch(computerChoice){
+                case choices[0]:
+                    console.log(winText);
+                    humanScore++;
+                    break;
+                case choices[2]:
+                    console.log(loseText);
+                    computerScore++;
+                    break;    
+            }
+        } else if(humanChoice == choices[2]){
+            switch(computerChoice){
+                case choices[0]:
+                    console.log(loseText);
+                    computerScore++;
+                    break;
+                case choices[1]:
+                    console.log(winText);
+                    humanScore++;
+                    break;    
+            }
+        } else if(humanChoice == choices[1]){
+            switch(computerChoice){
+                case choices[0]:
+                    console.log(winText);
+                    humanScore++;
+                    break;
+                case choices[2]:
+                    console.log(loseText);
+                    computerScore++;
+                    break;    
+            }
+        } else if(humanChoice == choices[2]){
+            switch(computerChoice){
+                case choices[0]:
+                    console.log(winText);
+                    humanScore++;
+                    break;
+                case choices[2]:
+                    console.log(loseText);
+                    computerScore++;
+                    break;    
+            }
+        } 
+    }
+
+    while(round < 5){
+        playRound(cpu = getComputerChoice(), human = getHumanChoice());
+        round++;
+    }
+
+    console.log(humanScore + " " + computerScore);
 }
 
-playRound(cpu = getComputerChoice(), human = getHumanChoice());
