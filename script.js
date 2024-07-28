@@ -49,17 +49,6 @@ function playGame(){
                     computerScore++;
                     break;    
             }
-        }else if(humanChoice == choices[1]){
-            switch(computerChoice){
-                case choices[0]:
-                    console.log(winText);
-                    humanScore++;
-                    break;
-                case choices[2]:
-                    console.log(loseText);
-                    computerScore++;
-                    break;    
-            }
         } else if(humanChoice == choices[2]){
             switch(computerChoice){
                 case choices[0]:
@@ -71,29 +60,7 @@ function playGame(){
                     humanScore++;
                     break;    
             }
-        } else if(humanChoice == choices[1]){
-            switch(computerChoice){
-                case choices[0]:
-                    console.log(winText);
-                    humanScore++;
-                    break;
-                case choices[2]:
-                    console.log(loseText);
-                    computerScore++;
-                    break;    
-            }
-        } else if(humanChoice == choices[2]){
-            switch(computerChoice){
-                case choices[0]:
-                    console.log(winText);
-                    humanScore++;
-                    break;
-                case choices[2]:
-                    console.log(loseText);
-                    computerScore++;
-                    break;    
-            }
-        } 
+        }
     }
 
     while(round < 5){
@@ -101,6 +68,12 @@ function playGame(){
         round++;
     }
 
-    console.log(humanScore + " " + computerScore);
+    if(humanScore == computerScore){
+        console.log(`You score ${humanScore}, cpu score ${computerScore} it's a tie game.`)
+    }else if(humanScore > computerScore){
+        console.log(`You score ${humanScore}, cpu score ${computerScore} you win the game.`)
+    }else{
+        console.log(`You score ${humanScore}, cpu score ${computerScore} you lose the game.`)
+    }
 }
-
+playGame();
