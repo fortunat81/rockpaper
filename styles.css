@@ -1,0 +1,15 @@
+#gameContainer{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#gameInfo{
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+    width: 275px;
+    height: 75px;
+}
